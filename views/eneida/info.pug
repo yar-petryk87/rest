@@ -1,0 +1,13 @@
+html 
+	head
+	body
+h1= heading
+h3= remark
+each row in rows
+	p(style="display:inline-block ;  width:300px")= row.data 
+	a(style="margin-left:50px" href='/eneida/edit?id=' + row.id) Edit
+	form(method='post' style="display:inline-block;" action='/eneida/delete')
+		input(type='hidden' name='row_id' value=''+row.id)
+		input(style="margin-left:30px" type='submit' value='Delete')
+	a(style="margin-left:100px" href='/eneida/get?id=' + row.id) Info
+	br
