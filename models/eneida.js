@@ -48,6 +48,7 @@ exports.update_row = function(id, text) {
 	eneida.forEach(function(el) {
 		if(el.id == id) {
 			el.data = text;
+		
 		}
 	});
 	
