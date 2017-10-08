@@ -89,7 +89,7 @@ exports.updateRow = function(req , res ) {
 	let text = req.body.buffer;
 	let update = eneida.update_row(id, text);
 	let accept_type = req.headers['accept'];
-	//res.redirect('/eneida');
+	res.redirect('/api');
 
 	if( isHTMLRequest(accept_type) ){
 		res.render(

@@ -22,8 +22,11 @@ exports.get_by_id = function(id) {
 
 
 function createId() {
-	return Number(eneida[eneida.length-1].id) + 1 ;
+	var last_id = eneida[eneida.length-1].id;
+	return String(Number(last_id) + 1);
 }
+
+
 exports.add_new_row = function(text) {
 	var new_row = { id: createId(), data: text };
 	eneida.push(new_row);
@@ -54,6 +57,7 @@ exports.update_row = function(id, text) {
 	
 
 	fs.writeFileSync('./models/data.json', JSON.stringify(eneida), 'utf8');
+	return eneida ;
 }
 
 

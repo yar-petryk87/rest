@@ -17,7 +17,8 @@ exports.getById = function(req , res) {
 exports.addNewRow = function(req , res) {
 	var new_text = req.body.newrow;
 	var new_row = eneida.add_new_row(new_text);
-	//res.redirect('/eneida');
+	console.info(new_row);
+	res.redirect('/api');
 		res.json(new_row); 
 
 };
